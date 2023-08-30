@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, TextInput, 
+import { Text, View, TextInput, 
   TouchableOpacity, Keyboard,Alert, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+import styles from "./styles";
+
 
 
 export default function App() {
@@ -225,23 +227,25 @@ export default function App() {
       </View>
 
       <View style={styles.containerRow}>
-        <View>
+        <View style={styles.containerCampoTexto}>
           <Text style={styles.legenda}>Senha</Text>
-              <TextInput 
-              style={styles.caixaTexto}
-              keyboardType='decimal-pad'
-              onChangeText={(texto)=> setSenha(texto)}
-              value={senha}>
-            </TextInput>
+          <TextInput 
+            style={styles.caixaTextoSenha}
+            keyboardType='ascii-capable'
+            onChangeText={(texto)=> setEmail(texto)}
+            value={email}
+                        >
+          </TextInput>
         </View>
-        <View>
-          <Text style={styles.legenda}>Confirmar Senha</Text>
-              <TextInput 
-              style={styles.caixaTexto}
-              keyboardType='decimal-pad'
-              onChangeText={(texto)=> setConfirmarSenha(texto)}
-              value={confirmarSenha}>
-            </TextInput>
+        <View style={styles.containerCampoTexto}>
+          <Text style={styles.legenda}>Confirmar botaoSenha</Text>
+          <TextInput 
+            style={styles.caixaTextoSenha}
+            keyboardType='ascii-capable'
+            onChangeText={(texto)=> setEmail(texto)}
+            value={email}
+                        >
+          </TextInput>
         </View>
       </View>
 
@@ -258,118 +262,8 @@ export default function App() {
           <Text style={styles.legenda}>Limpar</Text>       
         </TouchableOpacity>
 
-     
-   
       <StatusBar style="auto" />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#1d0f6e',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  containerCampoTexto: {
-    backgroundColor: '#1d0f6e',
-    alignItems: 'flex-start',
-    justifyContent: 'center',
-    height:'auto',
-    width: '70%',
-  },
-  containerRow: {
-    flexDirection:"row",
-    backgroundColor: '#1d0f6e',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '70%',
-  },
-  linhaBotao: {
-    flexDirection:"row",
-    height:'20%',
-    width: "100%",
-    justifyContent:"space-around",
-    height:'auto'
-  },
-  legenda: {
-    fontSize: 20,
-    color: 'white',
-    fontWeight: '500',
-  },
-  legendaBtnJogarNovamente: {
-    fontSize:20,
-    color: 'black',
-    justifyContent: 'center',
-    textAlign: 'center',
-    fontWeight: '500',
-  },
-  caixaTexto: {
-    fontSize:20,
-    color: 'white',
-    fontWeight: '500',
-    fontStyle: 'italic',
-    color: 'white',
-    width: '70%',
-    height: 40,
-    borderColor: 'white',
-    borderWidth: 1,
-    borderRadius: 10,
-    marginBottom: 20,
-    paddingHorizontal: 20,
-  },
-  botao: {
-    width: 300,
-    backgroundColor: 'black',
-    borderRadius: 20,
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    paddingVertical:5,
-    marginBottom:5,
-    marginTop: 5, 
-  },
-  botaoSenha: {
-    width: '45%',
-    backgroundColor: 'black',
-    borderRadius: 20,
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    paddingVertical:5,
-    marginBottom:5,
-    marginTop: 5, 
-  },
-  botaoJogaNovamente: {
-    justifyContent: 'center',
-    width: '70%',
-    backgroundColor: 'white',
-    borderRadius: 20,
-    alignItems: 'center',
-    flexDirection: 'row',
-    paddingVertical:5,
-    marginBottom:5,
-    marginTop: 20, 
-    borderColor: 'white',
-    borderWidth: 1,
-    borderRadius: 10,
-  },
-  resultado:{
-    fontSize:25,
-    color: 'white',
-    fontWeight: '500',
-    fontStyle: 'italic',
-    marginTop:10
-  },
-  imagem:{
-    height: 200,
-    width: 200
-  },
-  iconeBotao:{
-    color:'white',
-    marginLeft:'25%',
-    marginRight:20,
-  }
-
-});
