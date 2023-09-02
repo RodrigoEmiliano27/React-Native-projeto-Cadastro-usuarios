@@ -55,6 +55,12 @@ export default function App() {
       Alert.alert(e.toString());
     }
   }
+  function containsUppercase(str) {
+    return /[A-Z]/.test(str);
+  }
+  function hasNumber(myString) {
+    return /\d/.test(myString);
+  }
   async function salvaDados() {
 
     console.log("salvando..")
@@ -81,6 +87,21 @@ export default function App() {
     if(!(senha===confirmarSenha))
     {
       Alert.alert("Senhas não são iguais!")
+      return;
+    }
+    if(!containsUppercase(senha))
+    {
+      Alert.alert("A senha deve conter ao menos uma letra maiúscula!")
+      return;
+    }
+    if(!hasNumber(senha))
+    {
+      Alert.alert("A senha deve conter ao menos um número!")
+      return;
+    }
+    if(senha.length<5)
+    {
+      Alert.alert("A senha deve conter pelo menos 5 caracteres!")
       return;
     }
     let index = contatos.findIndex(c => c.id === codigo);
