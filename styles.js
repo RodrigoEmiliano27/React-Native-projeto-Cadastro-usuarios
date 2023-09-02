@@ -12,15 +12,39 @@ const styles = StyleSheet.create({
       backgroundColor: '#1d0f6e',
       alignItems: 'flex-start',
       justifyContent: 'center',
-      height:'auto',
+      height:'15%',
       width: 'auto',
+    },
+    containerCampoTextoSenha: {
+      backgroundColor: '#1d0f6e',
+      alignItems: 'flex-start',
+      justifyContent: 'flex-start',
+      height:'auto',
+      width: '50%',
+    },
+    sombra:{
+      shadowColor: "#ffffff",
+      shadowOffset: {
+        width: 0,
+        height: 7,
+      },
+      shadowOpacity:  0.21,
+      shadowRadius: 7.68,
+      elevation: 10
+    },
+    containerSenha: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      height:'auto',
+      width: '100%',
     },
     containerRow: {
       flexDirection:"row",
       backgroundColor: '#1d0f6e',
       alignItems: 'center',
       justifyContent: 'center',
-      width: 'auto',
+      width: '100%',
+      height:'12%',
     },
     containerBtnLabel: {
         alignItems: 'center',
@@ -41,6 +65,35 @@ const styles = StyleSheet.create({
       color: 'white',
       fontWeight: '500',
     },
+    legendaResultado: {
+      fontSize: 25,
+      marginTop:10,
+      color: 'white',
+      fontWeight: '500',
+    },
+    containerTitulo:{
+      backgroundColor:'black',
+      width:"100%",
+      padding:10,
+      borderRadius:20,
+      
+
+    },
+    titulo: {
+      fontSize: 30,
+      color: 'white',
+      textAlign:"center",
+      fontWeight: '500',
+      fontStyle:"italic",
+      backgroundColor:'black',
+      width:'100%'
+    },
+    legendaSenha: {
+      fontSize: 20,
+      color: 'white',
+      fontWeight: '500',
+      marginTop:-10
+    },
     legendaBtnJogarNovamente: {
       fontSize:20,
       color: 'black',
@@ -49,6 +102,7 @@ const styles = StyleSheet.create({
       fontWeight: '500',
     },
     caixaTextoSenha: {
+        flex:1,
         fontSize:20,
         color: 'white',
         fontWeight: '500',
@@ -78,38 +132,17 @@ const styles = StyleSheet.create({
       paddingHorizontal: 20,
     },
     botao: {
-      width: 300,
-      backgroundColor: 'black',
-      borderRadius: 20,
-      alignItems: 'center',
-      flexDirection: 'row',
-      justifyContent: 'flex-start',
-      paddingVertical:5,
-      marginBottom:5,
-      marginTop: 5, 
-    },
-    botaoSenha: {
       width: '45%',
       backgroundColor: 'black',
       borderRadius: 20,
       alignItems: 'center',
       flexDirection: 'row',
-      justifyContent: 'flex-start',
-      paddingVertical:5,
-      marginBottom:5,
-      marginTop: 5, 
-    },
-    botaoJogaNovamente: {
       justifyContent: 'center',
-      width: '70%',
-      backgroundColor: 'white',
-      borderRadius: 20,
-      alignItems: 'center',
-      flexDirection: 'row',
-      paddingVertical:5,
+      paddingVertical:10,
       marginBottom:5,
-      marginTop: 20, 
-      borderColor: 'white',
+      marginTop:15,
+      marginLeft: 10,
+      borderColor: '#4d2cda',
       borderWidth: 1,
       borderRadius: 10,
     },
@@ -128,7 +161,24 @@ const styles = StyleSheet.create({
       color:'white',
       marginLeft:'25%',
       marginRight:20,
-    }
+    },
+    inputContainer: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      borderBottomWidth: 1,
+      paddingVertical: 10,
+    },
+    textInput: {
+      flex: 1,
+    },
+    iconContainer: {
+      marginLeft: 10,
+    },
+    icon: {
+      position: 'absolute',
+      right: 10, // Adjust this value to control the icon's position
+      zIndex:1
+    },
   
   });
   
